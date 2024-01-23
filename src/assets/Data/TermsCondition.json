@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "name":"Terms and Conditions for News Application",
+        "Description":"Welcome to News Studio! These Terms and Conditions outline the rules and regulations for the use of the News Application.By accessing this News Application, we assume you accept these terms and conditions. Do not continue to use News Application if you do not agree to all of the terms and conditions stated on this page."
+    },
+    {
+        "id":2,
+        "name":"1. License to Use",
+        "Description":"1.1 Permission is granted to temporarily download one copy of the materials (information or software) from News Studio for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.1.2 Under this license, you may not a) Modify or copy the materials; b) Use the materials for any commercial purpose, or for any public display (commercial or non-commercial);c) Attempt to decompile or reverse engineer any software contained on News Studio;d) Remove any copyright or other proprietary notations from the materials; ore) Transfer the materials to another person or mirror the materials on any other server."
+    },
+    {
+        "id":3,
+        "name":"2. User Account",
+        "Description":"2.1 To access certain features of News Studio, you may be required to register for a user account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. 2.2 You are responsible for maintaining the confidentiality of your account and password, including but not limited to restricting access to your computer or mobile device. You agree to accept responsibility for all activities that occur under your account or password."
+    },
+    {
+        "id":4,
+        "name":"3. Content",
+        "Description":"3.1 News Studio reserves the right to monitor the content on News Studio and may remove or refuse to display any content that we believe violates these Terms and Conditions or is otherwise objectionable.3.2 You retain ownership of any content you submit or post on News Studio, but by doing so, you grant News Studio a worldwide, non-exclusive, royalty-free license to use, copy, reproduce, process, adapt, modify, publish, transmit, display, and distribute such content in any and all media or distribution methods."
+    },
+    {
+        "id":5,
+        "name":"4. Privacy",
+        "Description":"4.1 Your use of News Studio is also governed by our Privacy Policy. Please review our Privacy Policy to understand our practices."
+    },
+    {
+        "id":6,
+        "name":"5. Disclaimer",
+        "Description":"5.1 The materials on News Studio are provided on an 'as is' basis. News Studio makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights."
+    },
+    {
+        "id":7,
+        "name":"6. Changes to Terms and Conditions",
+        "Description":"6.1 News Studio may revise these terms and conditions at any time without notice. By using News Studio, you are agreeing to be bound by the then-current version of these Terms and Conditions.By using News Studio, you acknowledge that you have read and understood these Terms and Conditions and agree to be bound by them. If you do not agree with these terms, please do not use News Studio."
+    }
+]

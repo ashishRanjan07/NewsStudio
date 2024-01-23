@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "image": "https://source.unsplash.com/800x600/?technology",
+        "heading": "Breaking News: Exciting Developments in Tech World",
+        "tag": "Tag 1",
+        "category": "Popular",
+        "videoLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet leo vel odio tincidunt, non euismod orci ultricies."
+    },
+    {
+        "id": 2,
+        "image": "https://source.unsplash.com/800x600/?politics",
+        "heading": "Political Analysis: Key Insights into Recent Elections",
+        "tag": "Tag 2",
+        "category": "Politics",
+        "videoLink": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+        "description": "Sed quis elit ac lacus tristique malesuada. Fusce eu bibendum tortor. Vestibulum tincidunt nisl eu sem iaculis, et luctus justo lobortis."
+    },
+    {
+        "id": 3,
+        "image": "https://source.unsplash.com/800x600/?science",
+        "heading": "Innovation in Health: New Breakthroughs Unveiled",
+        "tag": "Tag 3",
+        "category": "Tech",
+        "videoLink": "https://www.youtube.com/watch?v=3tmd-ClpJxA",
+        "description": "Proin sit amet metus vel nulla congue iaculis a eu sapien. Suspendisse potenti. Nullam non sagittis urna, a dictum quam."
+    },
+    {
+        "id": 4,
+        "image": "https://source.unsplash.com/800x600/?health",
+        "heading": "Healthy Living: Tips for a Balanced Lifestyle",
+        "tag": "Tag 4",
+        "category": "Health",
+        "videoLink": "https://www.youtube.com/watch?v=hzS9eYxavZw",
+        "description": "Phasellus fermentum elit non tortor laoreet, at vulputate metus luctus. Integer nec neque vel justo hendrerit scelerisque."
+    },
+    {
+        "id": 5,
+        "image": "https://source.unsplash.com/800x600/?entertainment",
+        "heading": "Entertainment Buzz: Highlights from the Showbiz",
+        "tag": "Tag 5",
+        "category": "Entertainment",
+        "videoLink": "https://www.youtube.com/watch?v=y6120QOlsfU",
+        "description": "Aenean accumsan velit ut arcu consequat, nec fermentum urna fringilla. Quisque quis nunc vitae libero finibus scelerisque."
+    },
+    {
+        "id": 6,
+        "image": "https://source.unsplash.com/800x600/?sports",
+        "heading": "Sports Spectacle: Thrilling Moments in Recent Matches",
+        "tag": "Tag 6",
+        "category": "Sports",
+        "videoLink": "https://www.youtube.com/watch?v=Myswq1gF4ac",
+        "description": "Maecenas eget velit id tortor laoreet tristique in sit amet dolor. Duis luctus ex eu mauris congue, vel bibendum libero condimentum."
+    },
+    {
+        "id": 7,
+        "image": "https://source.unsplash.com/800x600/?technology",
+        "heading": "Scientific Wonders: Discoveries Shaping the Future",
+        "tag": "Tag 7",
+        "category": "Science",
+        "videoLink": "https://www.youtube.com/watch?v=rYEDA3JcQqw",
+        "description": "Curabitur at tortor ut purus cursus sollicitudin. Nam euismod justo ut turpis condimentum, in vehicula libero fringilla."
+    },
+    {
+        "id": 8,
+        "image": "https://source.unsplash.com/800x600/?popular",
+        "heading": "Trending Now: Popular Stories Making Headlines",
+        "tag": "Tag 8",
+        "category": "Popular",
+        "videoLink": "https://www.youtube.com/watch?v=d-diB65scQU",
+        "description": "Pellentesque id orci vel sem auctor vestibulum vel id leo. Integer auctor, quam et volutpat aliquam, justo lacus congue turpis."
+    },
+    {
+        "id": 9,
+        "image": "https://source.unsplash.com/800x600/?technology",
+        "heading": "Tech Trends: Future Technologies Shaping Our Lives",
+        "tag": "Tag 9",
+        "category": "Tech",
+        "videoLink": "https://www.youtube.com/watch?v=0t-Y4fX7s7E",
+        "description": "Vestibulum eget dolor sit amet elit efficitur aliquet non ac metus. Fusce dignissim sapien eu lacus laoreet, nec bibendum dolor tempus."
+    },
+    {
+        "id": 10,
+        "image": "https://source.unsplash.com/800x600/?health",
+        "heading": "Wellness Insights: Achieving Health Goals Holistically",
+        "tag": "Tag 10",
+        "category": "Health",
+        "videoLink": "https://www.youtube.com/watch?v=OMOVFvcNfvE",
+        "description": "Ut auctor ipsum ac augue congue, sit amet gravida dui bibendum. Nulla facilisi. Suspendisse potenti."
+    }
+]

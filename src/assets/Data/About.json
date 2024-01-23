@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"News Studio",
+        "Desctiption":"Welcome to News Studio, your go-to source for breaking news, trending stories, and in-depth coverage on a wide range of topics. We are dedicated to keeping you informed, engaged, and connected to the world around you."
+    },
+    {
+        "id":2,
+        "name":"Who We Are",
+        "Desctiption":"At News Studio, we believe in the power of information to empower individuals and communities. Our team of experienced journalists and content creators are committed to delivering accurate, timely, and unbiased news to our users. We understand the importance of staying informed in today's fast-paced world, and we strive to be your reliable source for all things news-related."
+    },
+    {
+        "id":3,
+        "name":"Our Mission",
+        "Desctiption":"Our mission is simple - to provide you with news that matters. Whether it's local, national, or global events, we aim to bring you the latest updates and insights that impact your life. We believe in the value of diverse perspectives and aim to present a balanced view of the news, allowing you to form your own opinions and make informed decisions."
+    },
+    {
+        "id":4,
+        "name":"What Sets Us Apart",
+        "Desctiption":"Timely Updates: We pride ourselves on delivering news as it happens, ensuring you are always in the know.Diverse Coverage: From politics to technology, entertainment to science, we cover a wide range of topics to cater to your diverse interests.User-Friendly Interface: Our app is designed with you in mind. Navigate easily, discover stories effortlessly, and stay connected without any hassle.Trustworthy Sources: We prioritize accuracy and reliability, sourcing information from trusted and reputable outlets to bring you the most reliable news."
+    },
+    {
+        "id":5,
+        "name":"Get Involved",
+        "Desctiption":"Your feedback is crucial to us. We encourage you to actively engage with the content, share your thoughts, and be part of the conversation. Connect with us on social media, comment on articles, and let us know what topics matter most to you."
+    },
+    {
+        "id":6,
+        "name":"Thank You",
+        "Desctiption":"Thank you for choosing News Studio as your news companion. We look forward to keeping you informed, inspired, and connected every day."
+    }
+]
