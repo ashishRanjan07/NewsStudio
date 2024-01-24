@@ -8,21 +8,108 @@ import {
   TouchableOpacity,
   View,
   ScrollView,
+  Alert,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
+import auth from '@react-native-firebase/auth';
+import validateInput from '../../component/ValidationComponent';
 import { responsiveFontSize, responsivePadding } from '../../component/Responsive';
 import { AppColors } from '../../component/Color';
 
 const Registration = ({navigation}) => {
   const [isMediaReporter, setIsMediaReporter] = useState(false);
   const [isVisitor, setIsVisitor] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [phoneNo, setPhoneNo] = useState('');
+  const [userName, setUserName] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!validateInput(userName, /^[A-Za-z]\w{5,29}$/, 'UserName')) {
+      return;
+    }
+
+    // Email Id validation and format check
+    if (
+      !validateInput(
+        email,
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+        'Email',
+      )
+    ) {
+      return;
+    }
+
+    // Phone Number validation and format check
+    if (
+      !validateInput(
+        phoneNo,
+        /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+        'Phone Number',
+      )
+    ) {
+      return;
+    }
+
+    // Condition for Password testing and format
+    if (
+      !validateInput(
+        password,
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+        'Password',
+      )
+    ) {
+      return;
+    }
+
+    try {
+      // Check if mandatory fields are filled
+
+      // Create user with email and password
+      await auth().createUserWithEmailAndPassword(email, password);
+
+      // Additional details to be sent during registration
+      const userDetails = {
+        email: email,
+        phoneNo: phoneNo,
+        userName: userName,
+        isMediaReporter: isMediaReporter,
+        isVisitor: isVisitor,
+      };
+
+      // You can now send userDetails to your backend or perform any additional actions
+
+      // Navigate to the verification screen
+      navigation.navigate('Verification');
+
+      // Show success alert
+      Alert.alert('User created successfully');
+    } catch (error) {
+      // Handle errors during registration
+      console.log('Error during registration:', error.nativeErrorMessage);
+      Alert.alert(
+        'Error during registration. Please try again.',
+        error.nativeErrorMessage,
+      );
+    } finally {
+      // Any cleanup or additional actions can be performed in the finally block
+      console.log('Registration process completed.');
+      setUserName('');
+      setEmail('');
+      setPhoneNo('');
+      setPassword('');
+      setIsMediaReporter(false);
+      setIsVisitor(false);
+    }
+  };
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <SafeAreaView style={styles.mainContainer}>
         {/* Header Image */}
         <View style={styles.imageView}>
@@ -44,6 +131,8 @@ const Registration = ({navigation}) => {
             style={styles.textInputStyle}
             placeholderTextColor="gray"
             placeholder="UserName"
+            value={userName}
+            onChangeText={text => setUserName(text)}
           />
         </View>
         {/* TextInput field for the Email */}
@@ -58,6 +147,8 @@ const Registration = ({navigation}) => {
             style={styles.textInputStyle}
             placeholderTextColor="gray"
             placeholder="Email"
+            value={email}
+            onChangeText={text => setEmail(text)}
           />
         </View>
         {/* TextInput field for the Phone Number */}
@@ -72,10 +163,13 @@ const Registration = ({navigation}) => {
             style={styles.textInputStyle}
             placeholderTextColor="gray"
             placeholder="Phone Number"
+            value={phoneNo}
+            maxLength={10}
+            onChangeText={text => setPhoneNo(text)}
           />
         </View>
         {/* TextInput field for the Password */}
-        <View style={styles.inputView}>
+        <View style={[styles.inputView,{alignItems:'center'}]}>
           <MaterialIcons
             name="password"
             size={24}
@@ -86,7 +180,18 @@ const Registration = ({navigation}) => {
             style={styles.textInputStyle}
             placeholderTextColor="gray"
             placeholder="Password"
+            value={password}
+            secureTextEntry={!isPasswordVisible}
+            onChangeText={text => setPassword(text)}
           />
+           <TouchableOpacity
+            onPress={() => setIsPasswordVisible(!isPasswordVisible)}>
+            <Feather
+              name={isPasswordVisible ? 'eye' : 'eye-off'}
+              size={24}
+              color="gray"
+            />
+          </TouchableOpacity>
         </View>
         {/* Selector Section */}
         <View style={styles.selectorView}>
@@ -109,14 +214,12 @@ const Registration = ({navigation}) => {
           </View>
         </View>
         {/* Button */}
-        <TouchableOpacity
-          style={styles.buttonView}
-          onPress={() => navigation.navigate('Verification')}>
+        <TouchableOpacity style={styles.buttonView} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
         <View style={{width: '80%'}}>
           <TouchableOpacity
-            style={{padding: 10}}
+            style={{padding: responsivePadding(10)}}
             onPress={() => navigation.navigate('Login')}>
             <Text style={[styles.textColor, {textAlign: 'center'}]}>
               Already have an account ?
@@ -132,16 +235,16 @@ const Registration = ({navigation}) => {
         {/* Socail Login Icons */}
         <View style={styles.iconView}>
           <View style={styles.iconStyle}>
-            <Fontisto name="google" size={responsiveFontSize(24)} color={AppColors.gray} />
+            <Fontisto name="google" size={responsiveFontSize(24)} color="gray" />
           </View>
           <View style={styles.iconStyle}>
-            <Fontisto name="facebook" size={responsiveFontSize(24)} color={AppColors.gray} />
+            <Fontisto name="facebook" size={responsiveFontSize(24)} color="gray" />
           </View>
           <View style={styles.iconStyle}>
-            <Fontisto name="twitter" size={responsiveFontSize(24)} color={AppColors.gray} />
+            <Fontisto name="twitter" size={responsiveFontSize(24)} color="gray" />
           </View>
           <View style={styles.iconStyle}>
-            <Fontisto name="apple" size={responsiveFontSize(24)} color={AppColors.gray} />
+            <Fontisto name="apple" size={responsiveFontSize(24)} color="gray" />
           </View>
         </View>
         {/* Bottom Text */}
@@ -178,14 +281,14 @@ const styles = StyleSheet.create({
     paddingVertical: responsivePadding(10),
     paddingHorizontal: responsivePadding(10),
     borderWidth: responsivePadding(2),
-    borderColor: AppColors.gray,
+    borderColor: 'gray',
     justifyContent: 'center',
   },
   textInputStyle: {
     fontSize: responsiveFontSize(18),
     marginLeft: responsivePadding(10),
     width: '80%',
-    color: AppColors.gray,
+    color: 'gray',
   },
   selectorView: {
     width: '80%',
@@ -197,16 +300,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
   },
   checkbox: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: responsivePadding(10),
+    justifyContent: 'space-around',
   },
   textColor: {
     fontSize: responsiveFontSize(18),
-    color: AppColors.gray,
+    color: 'gray',
   },
   buttonView: {
     backgroundColor: AppColors.acticeColor,
@@ -219,7 +322,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: responsiveFontSize(18),
-    color: AppColors.white,
+    color: 'white',
   },
 
   oRView: {

@@ -7,7 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React,{useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {AppColors} from '../../component/Color';
@@ -15,8 +15,25 @@ import {
   responsiveFontSize,
   responsivePadding,
 } from '../../component/Responsive';
+import auth from '@react-native-firebase/auth';
 
 const Login = ({navigation}) => {
+  const [userid, setUserId] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = () => {
+    auth()
+      .signInWithEmailAndPassword(userid, password)
+      .then(response => {
+        console.log(response);
+        navigation.navigate('CitySearch')
+      })
+      .catch(error => {
+        console.log(error);
+        Alert.alert(error.nativeErrorMessage)
+      });
+  };
+
   return (
     <SafeAreaView style={styles.mainContaner}>
       {/* Header Image */}
@@ -43,6 +60,8 @@ const Login = ({navigation}) => {
           style={styles.textInputStyle}
           placeholderTextColor="gray"
           placeholder="User Id"
+          value={userid}
+          onChangeText={text => setUserId(text)}
         />
       </View>
       {/* TextInput field for the Password */}
@@ -57,6 +76,8 @@ const Login = ({navigation}) => {
           style={styles.textInputStyle}
           placeholderTextColor="gray"
           placeholder="Password"
+          value={password}
+          onChangeText={text => setPassword(text)}
         />
       </View>
       {/*Forget Password View */}
@@ -72,7 +93,7 @@ const Login = ({navigation}) => {
 
       {/* Button */}
       <View style={{width: '80%'}}>
-        <TouchableOpacity style={styles.buttonView}>
+      <TouchableOpacity style={styles.buttonView} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </View>

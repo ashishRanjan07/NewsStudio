@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "699204367905",
+    "project_id": "react-native-news-apps",
+    "storage_bucket": "react-native-news-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699204367905:android:bd970336ba92ec05e9d560",
+        "android_client_info": {
+          "package_name": "com.newsstudio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-XS5-MO8oG6au8veuE3nbr_aYyhjg5zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
