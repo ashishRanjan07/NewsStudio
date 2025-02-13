@@ -1,8 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { LogBox, StyleSheet, Text, View } from 'react-native'
 import React,{useEffect} from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigation from './src/navigation/stack/StackNavigation';
 import messaging from '@react-native-firebase/messaging';
+LogBox.ignoreLogs(['Warning: ...']);
+
+// Ignore all log notifications
+LogBox.ignoreAllLogs();
+LogBox.ignoreLogs(['Remote debugger']);
 const App = () => {
 
   async function requestUserPermission() {

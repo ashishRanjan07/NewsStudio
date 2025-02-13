@@ -22,6 +22,7 @@ const Login = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const handleSubmit = () => {
+    // navigation.navigate('CitySearch')
     auth()
       .signInWithEmailAndPassword(userid, password)
       .then(response => {

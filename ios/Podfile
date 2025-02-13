@@ -30,6 +30,7 @@ target 'NewsStudio' do
 
   use_react_native!(
     :path => config[:reactNativePath],
+    
     # Enables Flipper.
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
@@ -38,6 +39,12 @@ target 'NewsStudio' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+
+  pod 'Firebase', :modular_headers => true
+  pod 'FirebaseCoreInternal', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
+  pod 'FirebaseCore', :modular_headers => true
+  pod 'GoogleUtilities/AppDelegateSwizzler', :modular_headers => true
 
   target 'NewsStudioTests' do
     inherit! :complete
